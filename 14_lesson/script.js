@@ -76,17 +76,21 @@ const combinations = [
 ];
 
 const contentEl = document.querySelector(".js-content");
-let markupItemEl = "";
+
 let player = "X";
 
 const historyX = [];
 const historyO = [];
 
-for (let i = 1; i <= 9; i += 1) {
-  markupItemEl += `<div class="item js-item" data-id="${i}"></div>`;
+function createMarkup() {
+  let markupItemEl = "";
+  for (let i = 1; i <= 9; i += 1) {
+    markupItemEl += `<div class="item js-item" data-id="${i}"></div>`;
+  }
+  contentEl.innerHTML = markupItemEl;
 }
 
-contentEl.insertAdjacentHTML("beforeend", markupItemEl);
+createMarkup();
 contentEl.addEventListener("click", onContentElClick);
 
 function onContentElClick(evt) {
@@ -109,8 +113,24 @@ function onContentElClick(evt) {
     result = historyO.length >= 3 && checkWinner(historyO);
   }
 
-  console.log(historyX);
-  console.log(historyO);
+  if (result) {
+    const instance = basicLightbox.create(`
+  <div class="box">
+        <h1>Player - ${player} is Winner 😎</h1>
+    </div>`);
+    instance.show(() => restart());
+    return;
+  }
+
+  const isEnd = historyO.length + historyX.length === contentEl.children.length;
+  if (isEnd) {
+    const instance = basicLightbox.create(`
+  <div class="box">
+        <h1>End Game 😂</h1>
+    </div>`);
+    instance.show(() => restart());
+    return;
+  }
 
   evt.target.textContent = player;
   player = player === "X" ? "O" : "X";
@@ -118,4 +138,11 @@ function onContentElClick(evt) {
 
 function checkWinner(arr) {
   return combinations.some((item) => item.every((id) => arr.includes(id)));
+}
+
+function restart() {
+  player = "X";
+  historyX.splice(0, historyX.length);
+  historyO.splice(0, historyO.length);
+  createMarkup();
 }
