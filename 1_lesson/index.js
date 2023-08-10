@@ -145,23 +145,59 @@ console.log(str.toUpperCase());
 
 // Виконавши математичні операції та застосувавши шаблоні рядки виведи в консоль загальну кількість та ціну за кожен продукт та за всі продукти в кошику
 
-const apple = "🍎";
+// const apple = "🍎";
 
-const appleQuantity = 8;
+// const appleQuantity = 8;
 
-const applePrice = 34;
+// const applePrice = 34;
 
-const appleMessage = `Загальна вартість ${apple} складає ${appleQuantity * applePrice}`;
+// const appleMessage = `Загальна вартість ${apple} складає ${appleQuantity * applePrice}`;
 
-const lemon = "🍋";
+// const lemon = "🍋";
 
-const lemonQuantity = 3;
+// const lemonQuantity = 3;
 
-const lemonPrice = 72;
-const lemonMessage = `Загальна вартість ${apple} складає ${appleQuantity * applePrice}`;
+// const lemonPrice = 72;
+// const lemonMessage = `Загальна вартість ${lemon} складає ${lemonQuantity * lemonPrice}`;
 
-// const cherry = '🍒';
+// const cherry = "🍒";
 
 // const cherryQuantity = 3;
 
 // const cherryPrice = 72;
+// const cherryMessage = `Загальна вартість ${cherry} складає ${cherryQuantity * cherryPrice}`;
+
+// const result = applePrice * appleQuantity + lemonPrice * lemonQuantity + cherryPrice * cherryQuantity;
+
+// console.log(`${appleMessage}. ${lemonMessage}. ${cherryMessage}. Загальна вартість корзини складає ${result}`);
+
+// Task - 2
+
+// Напиши скрипт, який переведе значення totalMinutes (кількість хвилин) в рядок у форматі годин та хвилин HH:MM.
+
+// 70 покаже 01:10
+// 450 покаже 07:30
+// 1441 покаже 24:01
+
+const totalMinutes = 450;
+const horas = Math.floor(totalMinutes / 60);
+// const minutes = Math.floor(totalMinutes - horas * 60);
+const minutes = totalMinutes % 60;
+
+console.log(`${horas.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`);
+
+// Task - 3
+
+// Виконай рефакторинг коду щоб уникнути помилок
+
+const name = "Harry";
+const message = `Hello my name is ${name}`;
+console.log(message);
+
+// Task - 4
+// Виконай рефакторинг коду так, щоб у змінну value присвоювалося значення змінної incomingValue, якщо воно не рівне undefined або null. В іншому випадку має присвоюватися значення defaultValue. Перевір роботу скрипта для наступних значень змінної incomingValue: null, undefined, 0, false. Використовуй оператор ?? (nullish coalescing operator).
+
+const incomingValue = 0;
+const defaultValue = 10;
+const value = incomingValue ?? defaultValue;
+console.log(value);
