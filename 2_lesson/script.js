@@ -66,3 +66,49 @@
 // Створи функцію яка буде приймати 2 параметри
 // 1 параметр це текст загадки
 // 2 правильна відповідь
+
+//codewars
+
+// 1. Write function bmi that calculates body mass index (bmi = weight / height2).
+
+// if bmi <= 18.5 return "Underweight"
+
+// if bmi <= 25.0 return "Normal"
+
+// if bmi <= 30.0 return "Overweight"
+
+// if bmi > 30 return "Obese"
+
+function bmi(weight, height) {
+  const bmi = weight / Math.pow(height, 2);
+  if (bmi <= 18.5) {
+    return "Underweight";
+  } else if (bmi <= 25.0) {
+    return "Normal";
+  } else if (bmi <= 30.0) {
+    return "Overweight";
+  }
+  return "Obese";
+}
+
+// 2. Напишите функцию, которая разбивает строку и преобразует ее в массив слов.
+
+function stringToArray(string) {
+  return string.split(" ");
+}
+
+stringToArray("Robin Singh");
+
+// 3. Напишите функцию для преобразования имени в инициалы. Это ката строго состоит из двух слов с одним пробелом между ними.
+
+// На выходе должны быть две заглавные буквы с точкой, разделяющей их.
+
+function abbrevName(name) {
+  let result = "";
+  for (let index = 0; index < name.length; index += 1) {
+    if (name[index] < "a") {
+      return (result += name[index].replace(" ", "."));
+    }
+  }
+}
+console.log(abbrevName("Sam Harris"));
