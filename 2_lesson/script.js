@@ -79,36 +79,135 @@
 
 // if bmi > 30 return "Obese"
 
-function bmi(weight, height) {
-  const bmi = weight / Math.pow(height, 2);
-  if (bmi <= 18.5) {
-    return "Underweight";
-  } else if (bmi <= 25.0) {
-    return "Normal";
-  } else if (bmi <= 30.0) {
-    return "Overweight";
-  }
-  return "Obese";
-}
+// function bmi(weight, height) {
+//   const bmi = weight / Math.pow(height, 2);
+//   if (bmi <= 18.5) {
+//     return "Underweight";
+//   } else if (bmi <= 25.0) {
+//     return "Normal";
+//   } else if (bmi <= 30.0) {
+//     return "Overweight";
+//   }
+//   return "Obese";
+// }
 
 // 2. Напишите функцию, которая разбивает строку и преобразует ее в массив слов.
 
-function stringToArray(string) {
-  return string.split(" ");
-}
+// function stringToArray(string) {
+//   return string.split(" ");
+// }
 
-stringToArray("Robin Singh");
+// stringToArray("Robin Singh");
 
 // 3. Напишите функцию для преобразования имени в инициалы. Это ката строго состоит из двух слов с одним пробелом между ними.
 
 // На выходе должны быть две заглавные буквы с точкой, разделяющей их.
 
-function abbrevName(name) {
-  let result = "";
-  for (let index = 0; index < name.length; index += 1) {
-    if (name[index] < "a") {
-      return (result += name[index].replace(" ", "."));
-    }
+// function abbrevName(name) {
+//   return name
+//     .split(" ")
+//     .map((i) => i[0].toUpperCase())
+//     .join(".");
+// }
+// console.log(abbrevName("Sam Harris"));
+
+//4. Вам даны lengthи width четырехугольника. Многоугольник может быть прямоугольным или квадратным.
+// Если это квадрат, вернуть его площадь. Если это прямоугольник, верните его периметр.
+
+// const areaOrPerimeter = function (l, w) {
+//   if (l === w) {
+//     return l * w;
+//   } else
+//   return 2 * (l + w);
+// };
+
+// const areaOrPerimeter = (l, w) => (l === w ? l * w : 2 * (l + w));
+
+// console.log(areaOrPerimeter(6, 10));
+
+// 5. Учитывая массив целых чисел, ваше решение должно найти наименьшее целое число.
+
+// Например:
+
+// Учитывая, что [34, 15, 88, 2]ваше решение вернется2
+// Учитывая, что [34, -345, -1, 100]ваше решение вернется-345
+// Для целей этого ката вы можете предположить, что предоставленный массив не будет пустым.
+
+// function findSmallestInt(args) {
+//   const result = args.sort((a, b) => a - b).slice(0, 1);
+//   return Number(result);
+// }
+
+// function findSmallestInt(args) {
+//   return Math.min(...args);
+// }
+
+// console.log(findSmallestInt([78, 56, 232, 12, 8]));
+
+// 6. После тяжелой четверти в офисе вы решаете немного отдохнуть в отпуске. Итак, вы забронируете рейс для себя и своей девушки и постараетесь оставить весь беспорядок позади.
+
+// Вам понадобится арендованный автомобиль, чтобы передвигаться в отпуске. Менеджер по аренде автомобилей делает вам несколько хороших предложений.
+
+// Каждый день аренды автомобиля стоит 40 долларов. Если вы арендуете автомобиль на 7 или более дней, вы получаете скидку в размере 50 долларов США. В качестве альтернативы, если вы арендуете автомобиль на 3 или более дней, вы получаете скидку в размере 20 долларов США.
+
+// Напишите код, который выдает общую сумму за разные дни (d).
+
+// function rentalCarCost(d) {
+//   const minDiscount = 20;
+//   const maxDiscount = 50;
+
+//   const price = 40;
+//   let total = 0;
+
+//   if (d >= 7) {
+//     return (total = d * price - maxDiscount);
+//   } else if (d >= 3) {
+//     return (total = d * price - minDiscount);
+//   }
+//   return (total = d * price);
+// }
+
+// console.log(rentalCarCost(1));
+
+// 7. Ваша задача — создать функцию, которая выполняет четыре основные математические операции.
+
+// Функция должна принимать три аргумента - операция(строка/символ), значение1(число), значение2(число).
+// Функция должна возвращать числовой результат после применения выбранной операции.
+
+function basicOp(operation, value1, value2) {
+  let result = 0;
+  switch (operation) {
+    case "+":
+      result = value1 + value2;
+      break;
+    case "-":
+      result = value1 - value2;
+      break;
+    case "*":
+      result = value1 * value2;
+      break;
+    case "/":
+      result = value1 / value2;
+      break;
+
+    default:
+      console.log("Invalid value");
   }
+  return result;
 }
-console.log(abbrevName("Sam Harris"));
+
+console.log(basicOp("+", 4, 7));
+
+// 8. Создайте функцию, которая возвращает массив целых чисел от n до 1, где n>0.
+
+// Пример: n=5-->[5,4,3,2,1]
+
+const reverseSeq = (n) => {
+  const result = [];
+  for (let i = n; i > 0; i -= 1) {
+    result.push(i);
+  }
+  return result;
+};
+
+console.log(reverseSeq(10));
