@@ -174,40 +174,74 @@
 // Функция должна принимать три аргумента - операция(строка/символ), значение1(число), значение2(число).
 // Функция должна возвращать числовой результат после применения выбранной операции.
 
-function basicOp(operation, value1, value2) {
-  let result = 0;
-  switch (operation) {
-    case "+":
-      result = value1 + value2;
-      break;
-    case "-":
-      result = value1 - value2;
-      break;
-    case "*":
-      result = value1 * value2;
-      break;
-    case "/":
-      result = value1 / value2;
-      break;
+// function basicOp(operation, value1, value2) {
+//   let result = 0;
+//   switch (operation) {
+//     case "+":
+//       result = value1 + value2;
+//       break;
+//     case "-":
+//       result = value1 - value2;
+//       break;
+//     case "*":
+//       result = value1 * value2;
+//       break;
+//     case "/":
+//       result = value1 / value2;
+//       break;
 
-    default:
-      console.log("Invalid value");
-  }
-  return result;
-}
+//     default:
+//       console.log("Invalid value");
+//   }
+//   return result;
+// }
 
-console.log(basicOp("+", 4, 7));
+// console.log(basicOp("+", 4, 7));
 
 // 8. Создайте функцию, которая возвращает массив целых чисел от n до 1, где n>0.
 
 // Пример: n=5-->[5,4,3,2,1]
 
-const reverseSeq = (n) => {
-  const result = [];
-  for (let i = n; i > 0; i -= 1) {
-    result.push(i);
-  }
-  return result;
-};
+// const reverseSeq = (n) => {
+//   const result = [];
+//   for (let i = n; i > 0; i -= 1) {
+//     result.push(i);
+//   }
+//   return result;
+// };
 
-console.log(reverseSeq(10));
+// console.log(reverseSeq(10));
+
+// 9. Ваша задача состоит в том, чтобы создать функцию, которая может принимать любое неотрицательное целое число в качестве аргумента и возвращать его с цифрами в порядке убывания. По сути, переставьте цифры, чтобы получить максимально возможное число.
+
+// function descendingOrder(n) {
+//   const result = [...n.toString()].sort((a, b) => b - a).join("");
+
+//   return Number(result);
+// }
+
+// function descendingOrder(n) {
+//   return parseInt(String(n).split("").sort().reverse().join(""));
+// }
+// console.log(descendingOrder(1021));
+
+// console.log(descendingOrder(0));
+// console.log(descendingOrder(123456789));
+
+// 10.
+
+function nbYear(p0, percent, aug, p) {
+  for (let index = 1; index < array.length; index += 1) {
+    const element = array[index];
+  }
+}
+
+// console.log(nbYear((1500, 5, 100, 5000)));
+
+// const p0 = 1500;
+// const percent = 5;
+// const aug = 100;
+// const p = 5000;
+
+// const quantityFirstYear = p0 + (percent / 100) * p0 + aug;
+// console.log(quantityFirstYear);
